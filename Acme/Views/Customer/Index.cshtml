@@ -1,0 +1,21 @@
+﻿@using Acme.Models.Entities
+@model Customer[]
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <title>Customers</title>
+</head>
+<body>
+    <partial name="_CurrentTime" model="@DateTime.Now" />
+    <h3>Customers</h3>
+    @foreach (var item in Model)
+    {
+        <span>@item.CompanyName</span>
+        <br />
+    }
+    <a asp-controller="Customers" asp-action="Create">Create new customer</a>
+</body>
+</html>
